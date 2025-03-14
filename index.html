@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width initial-scale=1.0"/>
+<meta name="description" content="Responsive Web Design Technical Documentation"/>
+<title>Responsive Web Design Technical Documentation</title>
+<link rel="stylesheet" href="./styles.css"> 
+  </head>
+  <body>
+        <div class="container">
+        <nav id="navbar">
+              <header class="firstheader">Responsive Web Design</header>
+           <div class="smallscreen"><ul style="list-style-type:none">
+                    <li><a href="#introduction"class="nav-link"><span>Introduction</span></a></li>
+              <li><a href="#why_does_it_really_matter?" class="nav-link"><span>Why does it really matter?</span></a></li>
+              <li><a href="#what_you_should_already_know" class="nav-link"><span>What you should already know</span></a></li>
+              <li><a href="#the_viewport" class="nav-link"><span>The viewport</span></a></li>
+              <li><a href="#layout_techniques" class="nav-link"><span>Layout techniques</span></a></li>
+              <li><a href="#media_queries" class="nav-link"><span>Media queries</span></a></li>
+              <li><a href="#responsive_images" class="nav-link"><span>Responsive images</span></a></li>
+              <li><a href="#common_mistakes" class="nav-link"><span>Common mistakes</span></a></li>
+              <li><a href="#reference" class="nav-link"><span>Reference</span></a></li>
+              </ul></div>
+            <hr id="vertical-line">
+        </nav>
+    <main id="main-doc">
+      <section id="introduction" class="main-section"><header class="main">Introduction</header>
+      <p>Responsive web design is an approach to web development that makes your web page look good on all devices. Whether its a tiny smartphone, a tablet, or a large desktop monitor, responsive design ensures that the content remains accessible, readable, and visually appealing.
+It is called responsive web design when you use CSS and HTML to resize, hide, shrink, enlarge, or move the content to make it look good on any screen. In responsive design, the mobile first approach is important because it ensures the essential content and functionality work well on small screens, after which additional features can be included with increase in screen size. 
+</p>
+      </section>
+      <section id="why_does_it_really_matter?" class="main-section"><header class="main">Why does it really matter? 
+</header><ul><li>It provides users with consistently great experiences across all devices. Layouts, navigation menus, buttons, and forms are easily interacted with.
+<li>Google and other search engines prioritize mobile-friendly sites in search results. Essentially, responsive design impacts search engine optimization (SEO).
+<li>It is cost effective because a single responsive site is more efficient than managing separate mobile and desktop versions. Updates and changes apply universally. As new devices with varying screens emerge, your site remains compatible. It is therefore adaptable to an ever-evolving landscape.
+</li></ul></section>
+      <section id="what_you_should_already_know" class="main-section"><header class="main">What you should already know</header><p>This guide assumes you have a basic understanding of:
+</p><ul><li>Hypertext Markup Language (HTML) which is the foundational structure of web pages. 
+</li><li>Cascading Style Sheets (CSS). This is crucial for styling.
+</li><li>If you are new to either or in need of a refresher, you can visit W3 Schools and W3 Schools for introductions.</li><ul></section>
+      <section id="the_viewport" class="main-section"><header class="main">The viewport 
+</header><p>The viewport 
+The viewport is the user's visible area of a web page and is crucial for getting stared with responsive web design.
+It usually varies with the device, and will be smaller on a mobile phone than on a computer screen. Before mobile phones and tablets, web pages had fixed sizes (viewports); however HTML5 introduced the meta tag to let web designers take control over the viewport. Here is how: 
+
+<pre><code>meta name="viewport" content="width=device-width, initial-scale=1.0"</code></pre>
+
+The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+
+The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+</p></section>
+      <section id="layout_techniques" class="main-section"><header class="main">Layout techniques
+</header><p>There are two approaches to laying out webpages:  
+</p><ul><li>Flexbox is a one-dimensional layout model that allows you to distribute space and align items within a container. The container (parent) is the outer element that holds the flex items while the flex-items (children) are the elements inside the container that participate in the flex layout.</li></ul></p>
+
+<p><pre><code>.container { 
+    display: flex;    /* This property enables the flexbox */
+    justify-content: center;   /* Aligns items horizontally along the main axis. In this case, to the center */
+    align-items: center;   /*  Aligns items vertically along the cross axis. In this case, to the center  */ 
+}</code></pre><p>Use flex box for simple layouts or aligning items within a container.
+</p>
+<li>Grid is a two-dimensional layout system that creates a grid of rows and columns. The grid container defines the grid, while the grid items are the elements within the grid. 
+</li></ul><p> <pre><code>.grid-container {
+  display: grid;   /* Applies this property to the grid container. */
+  grid-template-columns:  repeat(3, 1fr);  /* Defines the grid structure. */
+  gap: 1rem;  /* Sets spacing between grid items. */ 
+}</code></pre>
+</p><p>Use grid for complex layouts, such as magazine-style designs or image galleries.
+</p></section>
+      <section id="media_queries" class="main-section"><header class="main">Media queries</header><p>This uses the @media rule to include a block of CSS properties only if a certain condition is true. <pre><code> @media (min-width: 600px) { /* Styles for screens up to 600px wide and up */
+   body {
+    font-size: 16px; /* body font size changes to 16 pixels for larger screens */
+  }
+}</code></pre> </p> 
+<p>Like the above it is important to design "mobile first" and progressively develop for larger screens. The points at which styles change on either mobiles, tablets or desktops are called breakpoints.
+</p></section>
+      <section id="responsive_images" class="main-section"><header class="main">Responsive images
+</header><p>Rather than using fixed properties such as width or value dimensions like px, images should be made scalable.
+</p><p><pre><code>img {
+  max-width: 100%;  /* The image will scale down if it has to, but never scale up to be larger than its original size  */
+  height: auto;
+}</code></pre>
+<p>When the background-size property is set to "cover", the background image scales to cover the entire content area. The "cover" value keeps the aspect ratio, preventing it from stretching.  Some part of the background image is clipped off.</p>
+<p><pre><code>div {
+  width: 100%;
+  height: 400px;
+  background-image: url('img_flowers.jpg');
+  background-size: cover;
+}</code></pre>
+</p></section>
+      <section id="common_mistakes" class="main-section"><header class="main">Common mistakes 
+</header><ul><li>Each device has unique screen sizes, resolutions, and capabilities. Failing to test across devices can lead to unexpected layout issues or broken functionality.
+</li><li>It is important to start with mobile design which ensures a streamlined, efficient layout. Designing for desktop screens first and then trying to adapt for smaller screens can lead to bloated code or inefficient designs which forfeit simplicity. Mobile design first forces prioritization of essential content.
+</li><li>It is important to use relative units like em, rem, or percentages which adjust based on the parent element or viewport. Using fixed pixel values for font-sizes, margins, and paddings leads to poor adaptation on different screens.</li><li>Many users rotate their devices, the landscape orientation (horizontal screen) must be considered and tested.
+</li></ul></section>
+      <section id="reference" class="main-section"><header class="main">Reference</header><p>All the information on this page can be found at <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/">freeCodeCamp</a> and <a href="https://www.w3schools.com/css/css_rwd_intro.asp">W3Schools</a>. They are also great resources for tutorials.
+</p></section>
+    </main>
+    </div>
+  </body>
+</html>
