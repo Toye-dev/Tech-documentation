@@ -1,75 +1,79 @@
-html body {
-    font-family: arial;
-     }
+body {
+  font-family: arial;
+}
+
+html {
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
   
-  
-    html {
-    box-sizing: border-box;
-    }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .container {
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #reference {
-    margin-bottom: 45px;
-  }
-  
-  .smallscreen ul {
-   height: 205px;
-    overflow: auto;
-     color: #444444;
-  } 
-  
-  #navbar header {
-  font-size: 1.8em;
+.container {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#reference {
+  margin-bottom: 45px;
+}
+
+main ul {
+  padding-left: 15px;
+}
+
+.smallscreen ul {
+  height: 205px;
+  overflow: auto;
+  color: #444444;
+} 
+
+#navbar header {
+  font-size: 1.4em;
   text-align: center;
   padding-top:12px;
   padding-bottom: 5px;
   color: #0C0404;
-  }
-  
-  #navbar ul {
+}
+
+#navbar ul {
   border: 1px solid black;
   margin-left: -9px;
-  }
-  
-  span {
+}
+
+span {
   margin: 30px
-  }
-  
-  #navbar  li {
-  padding-top: 12px;
-  padding-bottom: 12px;
+}
+
+#navbar  li {
+  padding-top: 9px;
+  padding-bottom: 9px;
   margin-left: -40px;
   border-top: 1px solid black;
-  
-  }
-  
-  #main-doc {
-  font-size: .95em;
+}
+
+#main-doc {
+  font-size: .85em;
   line-height: 1.4;
   margin-left: 40px;
-   color: #444444;
-  }
-  
-  .main {
-    font-size: 1.8em;
-    margin-left: -15px;
-    color: #0C0404
-  }
-  
-  pre {
-    border: 0 solid rgb(68, 68, 68);
+  color: #444444;
+  padding-right: 15px;
+}
+
+.main {
+  font-size: 1.3em;
+  margin-left: -15px;
+  color: #0C0404
+}
+
+pre {
+  border: 0 solid rgb(68, 68, 68);
   background-color: rgb(128, 134, 128, 0.1);
   border-radius: 5px;
   padding-left: 15px;
@@ -77,80 +81,93 @@ html body {
   padding-bottom: 15px;
   padding-right: 15px;
   white-space: pre-wrap;
-  }
-  
-  #reference a {
-    text-decoration: underline;
-    color: hsl(240, 100%, 25%);
-  }
-  
-  #vertical-line {
-    display: none;
-  }
-  
-  
-  @media (min-width: 768px) {
-    .container {
-      display: flex;
-      flex-direction: row;
-    }
-    
-    #navbar {
-      width: 325px;
-  }
-  
-  #main-doc {
-  flex: 1;
-  width: calc(100%-290px);
-  }
-  
-  .smallscreen ul {
-   height: auto;
-     color: #444444;
-  }
-  
-  #navbar ul {
-  margin-left: -28px;
-  border: none;
-  position: fixed;
-  top: 65px;
-  }
-  
+}
+
+#reference a {
+  text-decoration: underline;
+  color: hsl(240, 100%, 25%);
+}
+
+#vertical-line {
+  display: none;
+}
+
+
+@media (min-width: 768px) {
+
   #navbar header {
-  position: fixed;
-  padding-top: 17px
+    font-size: 1.8em;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
   }
   
+  #navbar {
+    width: 325px;
+  }
+
+  #main-doc {
+    flex: 1;
+    width: calc(100%-290px);
+  }
+
+  .main {
+    font-size: 1.5em;
+  }
+
+  #main-doc {
+    font-size: 1.1em;
+  }
+
+  .smallscreen ul {
+    height: auto;
+    color: #444444;
+  }
+
+  #navbar ul {
+    margin-left: -28px;
+    border: none;
+    position: fixed;
+    top: 65px;
+  }
+
+  #navbar header {
+    position: fixed;
+    padding-top: 17px
+  }
+
   main {
     margin-top: 40px;
   }
-  
+
   #reference {
     padding-bottom: 30px
   }
-  
+
   #navbar li {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  margin-left: -40px;
-  border-top: 1px solid black;
-  width: 353px
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-left: -40px;
+    border-top: 1px solid black;
+    width: 353px
   }
-  
+
   p {
     line-height: 1.5
   }
-  
+
   #vertical-line {
-     display: block;
-     position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 333px; 
-      width: 1px; 
-      background-color: #444444;
-      margin-top: 0;
-      margin-bottom: 0;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 333px; 
+    width: 1px; 
+    background-color: #444444;
+    margin-top: 0;
+    margin-bottom: 0;
   }
-  }
+}
   
